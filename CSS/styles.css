@@ -1,0 +1,256 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.category-item {
+  border-radius: 10px;
+  background-color: rgb(98, 97, 110)!important;
+  color: #fff;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold; 
+  font-family: Arial, sans-serif; 
+}
+
+body {
+  min-width: 300px;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  background-color: #eee;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 96%;
+  margin: 0 auto;
+}
+
+.header {
+  height: 60px;
+}
+
+.logo {
+  color: #1985a1;
+  font-family: "Dancing Script", cursive;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.searchBar {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 0px 10px;
+}
+
+.searchBar button {
+  color: #999;
+  transition: transform 0.5s;
+}
+
+.searchBar button:hover {
+  color: black;
+}
+
+.searchBar button:active {
+  transform: translateY(3px);
+}
+
+.navigation-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.navigation-menu li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navigation-menu li a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  color: #666;
+  transition: color 0.3s, background-color 0.3s, transform 0.3s;
+}
+
+.navigation-menu li a:hover {
+  color: #333;
+  background-color: #ddd;
+}
+
+.navigation-menu li a:active {
+  transform: translateY(3px);
+}
+
+.banner {
+  height: 200px;
+}
+
+.banner-container {
+  position: relative;
+  height: 100%;
+}
+
+.banner-container div {
+  position: absolute;
+  left: 100px;
+  top: 50px;
+  color: white;
+}
+
+h3 {
+  font-style: italic;
+}
+
+.banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.product-list {
+  margin-top: 20px;
+  display: flex;
+  column-gap: 20px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+}
+
+.product-list li {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  row-gap: 5px;
+}
+
+.product-list li p {
+  margin-right: auto;
+  padding: 10px;
+  border: 1px solid #f77;
+  border-radius: 100px;
+  color: #f77;
+}
+
+.product-list li img {
+  max-height: 150px;
+  align-self: center;
+}
+
+.product-list li h1 {
+  font-weight: lighter;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: medium;
+}
+
+.product-list li h2 {
+  font-weight: bold;
+}
+
+.product-list li h2::before {
+  content: "R$ ";
+}
+
+.product-list li div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-list li div button {
+  border: 2px solid #1986a167;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
+  transition: transform 0.5s;
+}
+
+.product-list li div button:hover {
+  cursor: pointer;
+  background-color: #1986a167;
+}
+
+.product-list li div button:active {
+  transform: translateY(2px);
+}
+
+.product-list li div span {
+  transition: color 0.5s;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.product-list li div span:hover {
+  color: red;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+
+  background-color: #789;
+  padding: 0px;
+  font-family: "Dancing Script", cursive;
+  font-size: x-large;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer span {
+  margin-left: 10px;
+  margin-right: auto;
+}
+
+footer i {
+  margin-right: 10px;
+  font-size: 48px;
+  color: black;
+  margin-left: 10px;
+}
+
