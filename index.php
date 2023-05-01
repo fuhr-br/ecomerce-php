@@ -1,5 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
+<?php
+//O intuito aqui foi apenas inilizar o Banco de dados para ele criar as tabelas
+require_once 'database/conection.php';
+initConectDataBase();
+closeConnectionDataBase();
+?>
 
 <head>
   <meta charset="UTF-8">
@@ -35,7 +42,7 @@
         <?php
         $items = array(
           array("class" => "shoppingBag", "icon" => "shopping_bag", "link" => "carrinhoDeCompras.php", "tooltip" => "Carrinho de Compras"),
-          array("class" => "account", "icon" => "account_circle", "link" => "login.php", "tooltip" => "Entrar")
+          array("class" => "account", "icon" => "account_circle", "link" => "./login/login.php", "tooltip" => "Entrar")
         );
 
         foreach ($items as $item) {

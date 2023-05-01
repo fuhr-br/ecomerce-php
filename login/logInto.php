@@ -9,18 +9,29 @@
 
     <input type="submit" value="Login">
   </form>
-  <?php
-  $username = $_POST["username"];
-  $password = $_POST["password"];
 
-  // Verifica se o usuário e senha estão corretos
-  if ($username == "usuario" && $password == "senha") {
+  <?php
+  require_once '../database/conection.php';
+  require_once '../database/query/select/login.php';
+
+  $conn = initConectDataBase();
+
+  $username = filter_var($_POST["username"], FILTER_SANITIZE_STRING);
+  $password = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
+
+  $query = seachCredential($username, $password);
+  $result = mysqli_query($conn, $query);
+
+
+  if (mysqli_num_rows($result) > 0) {
+    closeConnectionDataBase();
     session_start();
 
     // seta como user logado
     $_SESSION["loggedin"] = true;
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
+
   } else {
     $output = "Nome de usuário ou senha inválidos!";
   }
@@ -32,6 +43,7 @@
     </div>
   <?php endif; ?>
 </div>
+
 <style>
   .container {
     display: flex;

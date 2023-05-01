@@ -3,7 +3,7 @@ session_start();
 if (isset($_POST['action'])) {
   if ($_POST['action'] == 'home') {
     // Redireciona o usuário para a página inicial
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 
   } else {
