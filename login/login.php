@@ -20,4 +20,6 @@ if (@$_SESSION["loggedin"]) {
     <input type="password" id="password" name="password" required><br>
 
     <input type="submit" value="Login">
+    <button class="botao" onclick="window.location.href='../index.php'">Voltar para página Inicial</button>
   </form>
+</div>
