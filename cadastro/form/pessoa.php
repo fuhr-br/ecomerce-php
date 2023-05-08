@@ -1,22 +1,25 @@
 <head>
-<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
 <title>Formulário de cadastro</title>
 </head>
 <body>
 	
-	<form name="formulario" action="cadastro_pessoa.php" method="post">
+	<form name="formulario" action="../cadastro_pessoa.php" method="POST">
   <h1>Cadastro de Pessoa</h1>
-		<label for="email">Email:</label>
-		<input type="email" name="email" required><br>
-
-		<label for="senha">Senha:</label>
-		<input type="password" name="senha" required><br>
-
-		<label for="nome">Nome:</label>
+	  <label for="nome">Nome:</label>
 		<input type="text" name="nome" required><br>
 
 		<label for="cpf">CPF:</label>
 		<input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><br>
+
+		<label for="email">Email:</label>
+		<input type="email" name="email" required><br>
+
+    <label for="username">Login:</label>
+		<input type="text" name="username" required><br>
+
+		<label for="senha">Senha:</label>
+		<input type="password" name="senha" required><br>
 
 		<h2>Endereço</h2>
 
