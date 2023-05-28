@@ -64,8 +64,7 @@ closeConnectionDataBase();
       <div class="container banner-container">
         <img src="https://http2.mlstatic.com/D_NQ_NP817326-MLA42786047230_072020-B.webp" alt="">
         <div>
-          <h1>OFERTA</h1>
-          <h2>10% OFF</h2>
+          <h1>OFERTAS</h1>
           <h3>EM TODO O SITE</h3>
         </div>
       </div>

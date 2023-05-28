@@ -6,6 +6,8 @@ require_once 'query/create_carrinho.php';
 require_once 'query/create_produto.php';
 require_once 'query/create_carrinho_produto.php';
 require_once 'query/insert/usuario.php';
+require_once 'query/insert/produto.php';
+require_once 'mock/produto_mock.php';
 require_once 'execute_query.php';
 
 
@@ -37,6 +39,12 @@ function createTables($conn)
 
   $userDefault = insertUser('email@email.com', 'admin', 'Admin', 'xxxxxxxxxx', 'admin');
   excecute($conn, $userDefault);
+
+  $produtosMock = getProdutosMock();
+  foreach ($produtosMock as $produto) {
+    $produtoDefault = insertProduto($produto['valor'],$produto['categoria'] , $produto['descricao'], $produto['imagem']);
+    excecute($conn, $produtoDefault);
+  }
 
 }
 ?>
