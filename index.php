@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <?php
+ require_once 'database/mock/produto_mock.php';
 //O intuito aqui foi apenas inilizar o Banco de dados para ele criar as tabelas
 require_once 'database/conection.php';
 initConectDataBase();
@@ -84,42 +85,28 @@ closeConnectionDataBase();
     </div>
 
     <div class="container">
-      <?php
-      $product = array(
-        "discount" => "50% Off",
-        "image" => "https://ae01.alicdn.com/kf/H28cefd8eff5d44a6a1cb6265a8e813551/Retroflag-GPi-CASE-for-Raspberry-Pi-Zero-and-Zero-W-with-Safe-Shutdown.jpg_220x220xz.jpg_.webp",
-        "name" => "Minigame",
-        "original_price" => "100,00",
-        "discounted_price" => "50,00",
-        "button_text" => "COMPRAR"
-      );
-      ?>
-      <ul class="product-list">
-        <li>
-          <p alt="desconto do item">
-            <?php echo $product["discount"]; ?>
-          </p>
-          <img src="<?php echo $product["image"]; ?>" alt="minigame">
-          <h1>
-            <?php echo $product["name"]; ?>
-          </h1>
-          de <h3>
-            <?php echo $product["original_price"]; ?>
-          </h3>
-          por<h2>
-            <?php echo $product["discounted_price"]; ?>
-          </h2>
-          <div>
-            <button alt="Botão de Comprar da Minigame">
-              <?php echo $product["button_text"]; ?>
-            </button>
-            <span class="material-icons-outlined">
-              favorite
-            </span>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <?php
+    $produtos = getProdutosMock();
+  ?>
+  <ul class="product-list">
+    <?php foreach ($produtos as $produto) { ?>
+      <li>
+        <img src="<?php echo $produto["imagem"]; ?>" alt="minigame">
+        <h1>
+          <?php echo $produto["descricao"]; ?>
+        </h1>
+        <h2>
+          <?php echo $produto["valor"]; ?>
+        </h2>
+        <div>
+          <button alt="Botão de Comprar da Minigame">
+            Comprar
+          </button>
+        </div>
+      </li>
+    <?php } ?>
+  </ul>
+</div>
   </section>
   <footer>
     <span alt="Nome do desenvolvedor do Site"> Anderson Fuhr Souza 2023</span>
