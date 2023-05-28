@@ -1,6 +1,6 @@
 <?php
 function seachCredential()
 {
-  return "SELECT * FROM produto";
+  return "SELECT * FROM produto LIMIT 10";
 }
 ?>
