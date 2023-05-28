@@ -3,7 +3,7 @@
 
 <?php
  require_once 'database/mock/produto_mock.php';
-//O intuito aqui foi apenas inilizar o Banco de dados para ele criar as tabelas
+//O intuito aqui foi apenas inicializar o Banco de dados para ele criar as tabelas
 require_once 'database/conection.php';
 initConectDataBase();
 closeConnectionDataBase();

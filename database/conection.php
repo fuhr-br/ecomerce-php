@@ -5,7 +5,7 @@ $servername = 'localhost';
 $username = 'root';
 $password = '';
 $dbname = 'ecommerce';
-@$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 function initConectDataBase()
 {
@@ -17,9 +17,10 @@ function initConectDataBase()
 
   if ($conn->connect_error) {
     $conn = new mysqli($servername, $username, $password);
-    createDataBase($conn, $dbname);
     if ($conn->connect_error) {
-      die("Falha na conexão com o banco: " . $conn->connect_error);
+      header('Location: ./util/erro.php');
+    }else {
+      createDataBase($conn, $dbname);
     }
   }
   return $conn;

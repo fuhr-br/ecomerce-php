@@ -1,4 +1,3 @@
-
 <?php
 require_once '../database/conection.php';
 require_once '../database/query/insert/endereco.php';

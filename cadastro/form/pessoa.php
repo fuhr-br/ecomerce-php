@@ -7,10 +7,10 @@
 	<form name="formulario" action="../cadastro_pessoa.php" method="POST">
   <h1>Cadastro de Pessoa</h1>
 	  <label for="nome">Nome:</label>
-		<input type="text" name="nome" required><br>
+		<input type="text" name="nome" pattern="^[a-zA-Z]+$" required><br>
 
 		<label for="cpf">CPF:</label>
-		<input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><br>
+		<input type="text" placeholder="xxx.xxx.xx-xx" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><br>
 
 		<label for="email">Email:</label>
 		<input type="email" name="email" required><br>
