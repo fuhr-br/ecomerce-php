@@ -45,6 +45,7 @@
 		<input type="text" name="cep" required><br>
 
 		<input id="submit" type="submit" value="Cadastrar">
+    <button id="botao" onclick="window.location.href='../../index.php'">Voltar para página Inicial</button>
 	</form>
 </body>
 </html>

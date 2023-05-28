@@ -21,5 +21,7 @@ if (@$_SESSION["loggedin"]) {
 
     <input type="submit" value="Login">
     <button class="botao" onclick="window.location.href='../index.php'">Voltar para página Inicial</button>
+    <button class="botao" name="action" value="logout" onclick="window.location.href='../cadastro/form/pessoa.php'">Criar Cadastro</button>
   </form>
+  
 </div>
