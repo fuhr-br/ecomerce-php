@@ -2,11 +2,10 @@
 <html lang="pt-br">
 
 <?php
- require_once 'database/mock/produto_mock.php';
+ require_once 'database/query/select/produto.php';
 //O intuito aqui foi apenas inicializar o Banco de dados para ele criar as tabelas
 require_once 'database/conection.php';
 initConectDataBase();
-closeConnectionDataBase();
 ?>
 
 <head>
@@ -86,7 +85,7 @@ closeConnectionDataBase();
 
     <div class="container">
   <?php
-    $produtos = getProdutosMock();
+    $produtos = getProducts();
   ?>
   <ul class="product-list">
     <?php foreach ($produtos as $produto) { ?>

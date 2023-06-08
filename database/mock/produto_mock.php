@@ -54,8 +54,20 @@ function getProdutosMock()
           "valor" => 39.99,
           "categoria" => "Roupa",
           "descricao" => "Calça capry",
-          "imagem" => "https://ae01.alicdn.com/kf/Ha84a65661b7e4042a610da8c8ebdcf03L/Mens-Boot-Cut-Jeans-Slightly-Flared-Slim-Fit-Blue-Black-Trousers-Designer-Classic-Male-Stretch-Denim.jpg_220x220xz.jpg_.webp"
-      )
+          "imagem" => "https://ae01.alicdn.com/kf/Sc24fa185f63445d287efdba83c754496Z/Cal-as-masculinas-novas-cal-as-soltas-masculina-casual-moda-cor-cal-as-listra-plus-size.jpg_Q90.jpg_.webp"
+      ),
+      array(
+        "valor" => 60.00,
+        "categoria" => "Roupa",
+        "descricao" => "Calça feminina",
+        "imagem" => "https://ae01.alicdn.com/kf/A5fb6237c0b3b484bbd44fed8d5c39b6a9/Black-Pant-Suplex-Style-Legguing-High-Waist-Claw-Knee-Open-Style-Riding-Trend.jpg_220x220xz.jpg_.webp"
+      ),
+      array(
+        "valor" => 50.00,
+        "categoria" => "Roupa",
+        "descricao" => "Calça casual",
+        "imagem" => "https://ae01.alicdn.com/kf/S15faddb47164476083cc4afcb5a84471J/Homem-Casual-Cal-as-Moda-Masculina-Roupas-Slim-Fit-Qualidade-Cintura-M-dia-Cal-as-Listradas.jpg_Q90.jpg_.webp"
+    )
       );
 }
 ?>

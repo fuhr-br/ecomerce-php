@@ -42,7 +42,12 @@ function createTables($conn)
 
   $produtosMock = getProdutosMock();
   foreach ($produtosMock as $produto) {
-    $produtoDefault = insertProduto($produto['valor'],$produto['categoria'] , $produto['descricao'], $produto['imagem']);
+    $produtoDefault = insertProduto(
+        $produto['valor'],
+        $produto['categoria'],
+        $produto['descricao'],
+        $produto['imagem']
+    );
     excecute($conn, $produtoDefault);
   }
 

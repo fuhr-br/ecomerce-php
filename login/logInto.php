@@ -19,7 +19,7 @@ if (mysqli_num_rows($result) > 0) {
   header("Location: ../index.php");
   exit();
 } else {
-  $output = "Nome de usuário ou senha inválidos!";
+  header('Location: ../util/erro.php');
 }
 ?>
 
