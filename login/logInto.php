@@ -1,8 +1,34 @@
+<?php
+require_once '../database/conection.php';
+require_once '../database/query/select/login.php';
+
+$conn = initConectDataBase();
+
+$username = filter_var($_POST["username"], FILTER_SANITIZE_STRING);
+$password = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
+
+$query = searchCredential($username, $password);
+$result = mysqli_query($conn, $query);
+
+if (mysqli_num_rows($result) > 0) {
+  closeConnectionDataBase();
+  session_start();
+
+  // seta como usuário logado
+  $_SESSION["loggedin"] = true;
+  header("Location: ../index.php");
+  exit();
+} else {
+  $output = "Nome de usuário ou senha inválidos!";
+}
+?>
+
 <head>
 <link rel="stylesheet" href="styles.css">
 <title>Login</title>
-<div class="container">
+</head>
 
+<div class="container">
   <form action="logInto.php" method="post">
     <label for="username">Usuário:</label>
     <input type="text" id="username" name="username" required><br>
@@ -12,33 +38,6 @@
 
     <input type="submit" value="Login">
   </form>
-
-  <?php
-  require_once '../database/conection.php';
-  require_once '../database/query/select/login.php';
-
-  $conn = initConectDataBase();
-
-  $username = filter_var($_POST["username"], FILTER_SANITIZE_STRING);
-  $password = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
-
-  $query = seachCredential($username, $password);
-  $result = mysqli_query($conn, $query);
-
-
-  if (mysqli_num_rows($result) > 0) {
-    closeConnectionDataBase();
-    session_start();
-
-    // seta como user logado
-    $_SESSION["loggedin"] = true;
-    header("Location: ../index.php");
-    exit();
-
-  } else {
-    $output = "Nome de usuário ou senha inválidos!";
-  }
-  ?>
 
   <?php if (!empty($output)): ?>
     <div class="login-output">

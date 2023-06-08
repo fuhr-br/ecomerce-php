@@ -1,6 +1,6 @@
 <?php
-function seachCredential($udername, $senha)
+function searchCredential($username, $senha)
 {
-  return "SELECT * FROM usuario WHERE username = '$udername' AND senha = '$senha'";
+  return "SELECT * FROM usuario WHERE username = '$username' AND senha = '$senha'";
 }
 ?>

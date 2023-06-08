@@ -1,5 +1,5 @@
 <?php
-function seachCredential()
+function searchCredential()
 {
   return "SELECT * FROM produto LIMIT 10";
 }
