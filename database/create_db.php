@@ -26,6 +26,7 @@ function createDataBase($conn, $dbname)
 
 function createTables($conn)
 {
+
   $user = createTableUser();
   excecute($conn, $user);
   $endereco = createTableEndereco();
@@ -37,19 +38,23 @@ function createTables($conn)
   $carrinhoProduto = createTableCartProduct();
   excecute($conn, $carrinhoProduto);
 
+  $query = "DELETE FROM produto;";
+  excecute($conn, $query);
+  $query = "DELETE FROM usuario;";
+  excecute($conn, $query);
+
   $userDefault = insertUser('email@email.com', 'admin', 'Admin', 'xxxxxxxxxx', 'admin');
   excecute($conn, $userDefault);
 
   $produtosMock = getProdutosMock();
   foreach ($produtosMock as $produto) {
     $produtoDefault = insertProduto(
-        $produto['valor'],
-        $produto['categoria'],
-        $produto['descricao'],
-        $produto['imagem']
+      $produto['valor'],
+      $produto['categoria'],
+      $produto['descricao'],
+      $produto['imagem']
     );
     excecute($conn, $produtoDefault);
   }
-
 }
 ?>
