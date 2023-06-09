@@ -15,5 +15,4 @@ function getProducts()
     header('Location: ../util/erro.php');
   }
 }
-
 ?>

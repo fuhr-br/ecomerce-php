@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <?php
- require_once 'database/query/select/produto.php';
+require_once 'database/query/select/produto.php';
 //O intuito aqui foi apenas inicializar o Banco de dados para ele criar as tabelas
 require_once 'database/conection.php';
 initConectDataBase();
@@ -12,6 +12,7 @@ initConectDataBase();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="stylesheet" href="CSS/styles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
@@ -31,10 +32,12 @@ initConectDataBase();
         <h1>Magazine</h1>
       </a>
       <div class="searchBar">
-        <input type="search" name="" id="" placeholder="Procurar" alt="procurar no site">
-        <button><span class="material-icons-outlined">
+        <input type="search" name="" id="input_search" placeholder="Procurar" alt="procurar no site">
+        <button id="btn_search" onclick="searchProducts()">
+          <span class="material-icons-outlined">
             search
-          </span></button>
+          </span>
+        </button>
       </div>
 
       <ul class="navigation-menu">
@@ -82,30 +85,10 @@ initConectDataBase();
         ?>
       </ul>
     </div>
-
+  
     <div class="container">
-  <?php
-    $produtos = getProducts();
-  ?>
-  <ul class="product-list">
-    <?php foreach ($produtos as $produto) { ?>
-      <li>
-        <img src="<?php echo $produto["imagem"]; ?>" alt="minigame">
-        <h1>
-          <?php echo $produto["descricao"]; ?>
-        </h1>
-        <h2>
-          <?php echo $produto["valor"]; ?>
-        </h2>
-        <div>
-          <button alt="Botão de Comprar da Minigame">
-            Comprar
-          </button>
-        </div>
-      </li>
-    <?php } ?>
-  </ul>
-</div>
+      <!-- DIV onde ficam os produtos -->
+    </div>
   </section>
   <footer>
     <span alt="Nome do desenvolvedor do Site"> Anderson Fuhr Souza 2023</span>
@@ -117,3 +100,51 @@ initConectDataBase();
 </body>
 
 </html>
+
+<script>
+  function searchProducts() {
+    var param = document.getElementById("input_search").value;
+
+    $.ajax({
+      url: 'database/query/select/search_products.php',
+      data: { param: param },
+      dataType: 'json',
+      success: function (products) {
+        popularProductList(products);
+      },
+      error: function (xhr, status, error) {
+        console.log('Ocorreu um erro na solicitação AJAX:', xhr.responseText);
+      }
+    });
+  }
+  function popularProductList(products) {
+
+    var el = $('.teste_id');
+    el.empty();
+
+    var ulElement = $('.product-list');
+    ulElement.empty();
+
+    $.each(products, function (index, item) {
+      var liElement = $('<li>');
+
+      var imgElement = $('<img>').attr('src', item.imagem).attr('alt', 'minigame');
+      liElement.append(imgElement);
+
+      var h1Element = $('<h1>').text(item.descricao);
+      liElement.append(h1Element);
+
+      var h2Element = $('<h2>').text(item.valor);
+      liElement.append(h2Element);
+
+      var divElement = $('<div>');
+      liElement.append(divElement);
+
+      var buttonElement = $('<button>').attr('alt', 'Botão de Comprar').text('Comprar');
+      divElement.append(buttonElement);
+
+      ulElement.append(liElement);
+    });
+  }
+  searchProducts();
+</script>

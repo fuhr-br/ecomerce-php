@@ -42,3 +42,7 @@ i{
 #i-error{
   color:rgba(255, 157, 0, 0.976);
 }
+
+#btn_search:hover {
+  cursor: pointer;
+}
