@@ -44,7 +44,7 @@ initConectDataBase();
 
         <?php
         $items = array(
-          array("class" => "shoppingBag", "icon" => "shopping_bag", "link" => "carrinhoDeCompras.php", "tooltip" => "Carrinho de Compras"),
+          array("class" => "shoppingBag", "icon" => "shopping_bag", "link" => "./carrinho/carrinho.html", "tooltip" => "Carrinho de Compras"),
           array("class" => "account", "icon" => "account_circle", "link" => "./login/login.php", "tooltip" => "Entrar")
         );
 
@@ -102,6 +102,14 @@ initConectDataBase();
 </html>
 
 <script>
+   class Item {
+      constructor(preco, descricao) {
+        this.preco = preco;
+        this.descricao = descricao;
+      }
+    }
+
+
   function searchProducts() {
     var param = document.getElementById("input_search").value;
 
@@ -143,8 +151,34 @@ initConectDataBase();
       var buttonElement = $('<button>').attr('alt', 'Botão de Comprar').text('Comprar');
       divElement.append(buttonElement);
 
+      buttonElement.click(function() {
+      var descricao = h1Element.text();
+      var preco = h2Element.text();
+      addCart(preco, descricao);
+    });
+
       ulElement.append(liElement);
     });
   }
+  function  addCart(preco, descricao){
+    const item = new Item(preco, descricao);
+    const itens = carregarItensDoLocalStorage();
+    itens.push(item);
+
+    localStorage.setItem("carrinho", JSON.stringify(itens));
+    alert("Item adicionado ao carrinho!");
+  }
+
+  function carregarItensDoLocalStorage() {
+  const itensString = localStorage.getItem("carrinho");
+  if (itensString) {
+    const itensJson = JSON.parse(itensString);
+    const itens = itensJson.map((item) => new Item(item.preco, item.descricao));
+    return itens;
+  } else {
+    return [];
+  }
+}
+
   searchProducts();
 </script>
