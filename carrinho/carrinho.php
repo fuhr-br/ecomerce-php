@@ -6,7 +6,7 @@
   <title>Cadastro de Funcionários</title>
 </head>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+<script src="./styles.css"></script>
 <body onload="popularCarrinho(carregarItensDoLocalStorage())">
   <table id="cart">
     <thead>
@@ -19,41 +19,7 @@
     <tbody>
     </tbody>
   </table>
-  <style>
-    body {
-      font-family: Arial;
-    }
-
-    label {
-      display: inline-block;
-      width: 150px;
-      margin: 2px;
-    }
-
-    fieldset {
-      display: inline-block;
-    }
-
-    th {
-      background-color: black;
-      color: white;
-    }
-
-    #datanasc,
-    #dataadmissao {
-      width: 10em;
-    }
-
-    td:last-child,
-    button {
-      border: none;
-      text-align: center;
-      color: red;
-      cursor: pointer;
-    }
-  </style>
-
-<script>
+  <script>
     class Item {
       constructor(preco, descricao) {
         this.preco = preco;
@@ -86,7 +52,7 @@
 
         const td_excluir = $("<td></td>");
         const btn_excluir = $("<button>X</button>");
-        
+
         btn_excluir.on("click", function () {
           excluirItemDoLocalStorage(item.descricao);
           tr.remove();
@@ -109,4 +75,82 @@
     function updateCart(itens) {
       localStorage.setItem("carrinho", JSON.stringify(itens));
     }
-</script>
+  </script>
+
+<style>
+    body {
+      font-family: Arial;
+    }
+
+    label {
+      display: inline-block;
+      width: 150px;
+      margin: 2px;
+    }
+
+    fieldset {
+      display: inline-block;
+    }
+
+    th {
+      background-color: black;
+      color: white;
+    }
+
+    #datanasc,
+    #dataadmissao {
+      width: 10em;
+    }
+
+    td:last-child,
+    button {
+      border: none;
+      text-align: center;
+      color: red;
+      cursor: pointer;
+    }
+
+    #cart {
+      width: 80%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    #cart th,
+    #cart td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #cart th {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    #cart tbody tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    #cart tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #cart tbody td:last-child {
+      text-align: center;
+    }
+
+    #cart tbody td:last-child button {
+      padding: 6px 12px;
+      background-color: #ff4d4d;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #cart tbody td:last-child button:hover {
+      background-color: #ff3333;
+    }
+  </style>

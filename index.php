@@ -44,7 +44,7 @@ initConectDataBase();
 
         <?php
         $items = array(
-          array("class" => "shoppingBag", "icon" => "shopping_bag", "link" => "./carrinho/carrinho.html", "tooltip" => "Carrinho de Compras"),
+          array("class" => "shoppingBag", "icon" => "shopping_bag", "link" => "./carrinho/carrinho.php", "tooltip" => "Carrinho de Compras"),
           array("class" => "account", "icon" => "account_circle", "link" => "./login/login.php", "tooltip" => "Entrar")
         );
 
