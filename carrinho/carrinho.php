@@ -8,17 +8,21 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="./styles.css">
 <body onload="popularCarrinho(carregarItensDoLocalStorage())">
+<div id="container">
+  <h1>Carrinho de compras</h1><h3>
   <table id="cart">
-    <thead>
-      <tr>
-        <th>Preço</th>
-        <th>Descrição</th>
-        <th>Excluir</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
+      <thead>
+        <tr>
+          <th>Preço</th>
+          <th>Descrição</th>
+          <th>Excluir</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+</h3>
+</div> 
   <script>
     class Item {
       constructor(preco, descricao) {

@@ -77,22 +77,3 @@ input[type="submit"]:hover {
   font-size: 18px;
   margin-bottom: 20px;
 }
-
-.logout {
-  border: 2px solid #ccc;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #f1f1f1;
-  margin-top: 20px;
-}
-
-.logout form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.logout p {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
