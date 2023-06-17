@@ -44,6 +44,14 @@ initConectDataBase();
 
     <div class="container">
       <!-- DIV onde ficam os produtos -->
+      <ul class="product-list" id="list">
+        <?php
+        $categorias = array("Eletronico", "Roupas");
+
+        foreach ($categorias as $categoria) {
+          echo '<li class="category-item">' . $categoria . '</li>';
+        }
+        ?>
     </div>
   </section>
   <footer>
@@ -66,7 +74,7 @@ initConectDataBase();
     var el = $('.teste_id');
     el.empty();
 
-    var ulElement = $('.product-list');
+    var ulElement = $('#list');
     ulElement.empty();
 
     $.each(products, function (index, item) {
@@ -94,6 +102,7 @@ initConectDataBase();
       });
 
       ulElement.append(liElement);
+      
     });
   }
   function addCart(preco, descricao) {
