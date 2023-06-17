@@ -5,7 +5,7 @@
 
     <div class="container header-container">
 
-      <a href="" class="logo">
+      <a href="/ecomerce-php/index.php" class="logo">
         <h1>Magazine</h1>
       </a>
       <ul class="navigation-menu">
