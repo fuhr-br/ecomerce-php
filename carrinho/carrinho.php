@@ -83,6 +83,8 @@
 
         btn_excluir.on("click", function () {
           excluirItemDoLocalStorage(item.descricao);
+          precoTotal -= parseFloat(item.preco);
+          localStorage.setItem("totalCart", precoTotal);
           tr.remove();
         });
 
@@ -110,17 +112,16 @@
       popularCarrinho(items);
     }
 
-      function updateCart(itens) {
-        localStorage.setItem("carrinho", JSON.stringify(itens));
-      }
+    function updateCart(itens) {
+      localStorage.setItem("carrinho", JSON.stringify(itens));
+    }
 
-      function finalizarCompra(){
-       let total = localStorage.getItem("totalCart");
+    function finalizarCompra() {
+      let total = localStorage.getItem("totalCart");
+      if (total > 0) {
         localStorage.clear();
-        if(total){
-          console.log("cheio"+total);
-          window.location.href = "../util/sucesso.php";
-        }
+        window.location.href = "../util/sucesso.php";
       }
-    
+    }
+
   </script>
