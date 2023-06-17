@@ -3,8 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
+  <?php include_once '../util/fonts.php'; ?>
   <title>Cadastro de Funcionários</title>
 </head>
+<header>
+<?php include_once '../header/generic_header.php'; ?>
+</header>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="./styles.css">
 <body onload="popularCarrinho(carregarItensDoLocalStorage())">
@@ -13,8 +18,8 @@
   <table id="cart">
       <thead>
         <tr>
-          <th>Preço</th>
           <th>Descrição</th>
+          <th>Preço</th>
           <th>Excluir</th>
         </tr>
       </thead>
@@ -23,6 +28,9 @@
     </table>
 </h3>
 </div> 
+<footer>
+  <?php include_once '../footer/footer.php'; ?>
+</footer>
   <script>
     class Item {
       constructor(preco, descricao) {

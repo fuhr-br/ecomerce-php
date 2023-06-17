@@ -9,58 +9,14 @@ initConectDataBase();
 ?>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <?php include_once './util/fonts.php'; ?>
   <link rel="stylesheet" href="CSS/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Magazine</title>
 </head>
 
 <body>
   <header class="header">
-    <div class="container header-container">
-
-      <a href="" class="logo">
-        <h1>Magazine</h1>
-      </a>
-      <div class="searchBar">
-        <input type="search" name="" id="input_search" placeholder="Procurar" alt="procurar no site">
-        <button id="btn_search" onclick="searchProducts()">
-          <span class="material-icons-outlined">
-            search
-          </span>
-        </button>
-      </div>
-
-      <ul class="navigation-menu">
-
-        <?php
-        $items = array(
-          array("class" => "shoppingBag", "icon" => "shopping_bag", "link" => "./carrinho/carrinho.php", "tooltip" => "Carrinho de Compras"),
-          array("class" => "account", "icon" => "account_circle", "link" => "./login/login.php", "tooltip" => "Entrar")
-        );
-
-        foreach ($items as $item) {
-          echo "<li>";
-          echo sprintf("<a href='%s' title='%s' target='_blank'>", $item["link"] ? $item["link"] : '#', $item["tooltip"]);
-          echo "<span class='material-icons-outlined {$item["class"]}'>";
-          echo "{$item["icon"]}";
-          echo "</span>";
-          echo "</a>";
-          echo "</li>";
-        }
-        ?>
-
-      </ul>
-    </div>
+    <?php include_once './header/header.php'; ?>
   </header>
   <section class="banner">
     <a href="">
@@ -85,46 +41,26 @@ initConectDataBase();
         ?>
       </ul>
     </div>
-  
+
     <div class="container">
       <!-- DIV onde ficam os produtos -->
     </div>
   </section>
   <footer>
-    <span alt="Nome do desenvolvedor do Site"> Anderson Fuhr Souza 2023</span>
-    <a href="https://github.com/fuhr-br/ecomerce-php" alt="Link com código fonte do site no GitHub" target="__blank">
-      <i class="fa fa-github" alt="Icone do mascote do site do GitHub.com" style="font-size:48px;color:black">
-      </i>
-    </a>
+  <?php include_once './footer/footer.php'; ?>
   </footer>
 </body>
 
 </html>
 
 <script>
-   class Item {
-      constructor(preco, descricao) {
-        this.preco = preco;
-        this.descricao = descricao;
-      }
+  class Item {
+    constructor(preco, descricao) {
+      this.preco = preco;
+      this.descricao = descricao;
     }
-
-
-  function searchProducts() {
-    var param = document.getElementById("input_search").value;
-
-    $.ajax({
-      url: 'database/query/select/search_products.php',
-      data: { param: param },
-      dataType: 'json',
-      success: function (products) {
-        popularProductList(products);
-      },
-      error: function (xhr, status, error) {
-        console.log('Ocorreu um erro na solicitação AJAX:', xhr.responseText);
-      }
-    });
   }
+
   function popularProductList(products) {
 
     var el = $('.teste_id');
@@ -151,16 +87,16 @@ initConectDataBase();
       var buttonElement = $('<button>').attr('alt', 'Botão de Comprar').text('Comprar');
       divElement.append(buttonElement);
 
-      buttonElement.click(function() {
-      var descricao = h1Element.text();
-      var preco = h2Element.text();
-      addCart(preco, descricao);
-    });
+      buttonElement.click(function () {
+        var descricao = h1Element.text();
+        var preco = h2Element.text();
+        addCart(preco, descricao);
+      });
 
       ulElement.append(liElement);
     });
   }
-  function  addCart(preco, descricao){
+  function addCart(preco, descricao) {
     const item = new Item(preco, descricao);
     const itens = carregarItensDoLocalStorage();
     itens.push(item);
@@ -170,15 +106,15 @@ initConectDataBase();
   }
 
   function carregarItensDoLocalStorage() {
-  const itensString = localStorage.getItem("carrinho");
-  if (itensString) {
-    const itensJson = JSON.parse(itensString);
-    const itens = itensJson.map((item) => new Item(item.preco, item.descricao));
-    return itens;
-  } else {
-    return [];
+    const itensString = localStorage.getItem("carrinho");
+    if (itensString) {
+      const itensJson = JSON.parse(itensString);
+      const itens = itensJson.map((item) => new Item(item.preco, item.descricao));
+      return itens;
+    } else {
+      return [];
+    }
   }
-}
 
   searchProducts();
 </script>
