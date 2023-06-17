@@ -14,7 +14,8 @@
 <link rel="stylesheet" href="./styles.css">
 <body onload="popularCarrinho(carregarItensDoLocalStorage())">
 <div id="container">
-  <h1>Carrinho de compras</h1><h3>
+  <h1 id="title-cart">Carrinho de compras</h1>
+<h3>
   <table id="cart">
       <thead>
         <tr>

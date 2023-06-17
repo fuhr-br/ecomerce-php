@@ -11,7 +11,7 @@
       <ul class="navigation-menu">
         <?php
         $items = array(
-          array("class" => "shoppingBag", "icon" => "shopping_bag", "link" => "/ecomerce-php/carrinho/carrinho.php", "tooltip" => "Carrinho de Compras"),
+          array("class" => "shopping-cart", "icon" => "shopping_cart", "link" => "/ecomerce-php/carrinho/carrinho.php", "tooltip" => "Carrinho de Compras"),
           array("class" => "account", "icon" => "account_circle", "link" => "/ecomerce-php/login/login.php", "tooltip" => "Entrar")
         );
 

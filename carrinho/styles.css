@@ -1,6 +1,14 @@
 body {
   font-family: Arial;
 }
+
+#title-cart {
+  font-style: italic;
+  color: #1985a1;
+  font-weight: bold;
+  transition: color 0.3s, background-color 0.3s, transform 0.3s;
+}
+
 #container{
   border: 2px solid #ccc;
   padding: 20px;
