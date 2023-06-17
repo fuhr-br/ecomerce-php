@@ -3,7 +3,7 @@
 
 <?php
 require_once 'database/query/select/produto.php';
-//O intuito aqui foi apenas inicializar o Banco de dados para ele criar as tabelas
+
 require_once 'database/conection.php';
 initConectDataBase();
 ?>
@@ -33,10 +33,10 @@ initConectDataBase();
     <div class="container">
       <ul class="product-list">
         <?php
-        $categorias = array("Eletronico", "Roupas");
+        $categorias = array("Eletronico", "Roupa");
 
         foreach ($categorias as $categoria) {
-          echo '<li class="category-item">' . $categoria . '</li>';
+          echo '<li class="category-item" onclick="searchProductsByCategory(this)" style="cursor: pointer;">' . $categoria . '</li>';
         }
         ?>
       </ul>
@@ -45,17 +45,10 @@ initConectDataBase();
     <div class="container">
       <!-- DIV onde ficam os produtos -->
       <ul class="product-list" id="list">
-        <?php
-        $categorias = array("Eletronico", "Roupas");
-
-        foreach ($categorias as $categoria) {
-          echo '<li class="category-item">' . $categoria . '</li>';
-        }
-        ?>
     </div>
   </section>
   <footer>
-  <?php include_once './footer/footer.php'; ?>
+    <?php include_once './footer/footer.php'; ?>
   </footer>
 </body>
 
@@ -102,7 +95,7 @@ initConectDataBase();
       });
 
       ulElement.append(liElement);
-      
+
     });
   }
   function addCart(preco, descricao) {
@@ -126,4 +119,20 @@ initConectDataBase();
   }
 
   searchProducts();
+  function searchProductsByCategory(element) {
+    var param = element.innerText;
+      $.ajax({
+        url: 'database/query/select/search_products_by_category.php',
+        data: { param: param },
+        dataType: 'json',
+        success: function (products) {
+          console.log(products)
+          popularProductList(products);
+        },
+        error: function (xhr, status, error) {
+          console.log('Ocorreu um erro na solicitação AJAX:', xhr.responseText);
+        }
+      });
+    }
 </script>
+
