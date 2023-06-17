@@ -14,8 +14,13 @@ if (mysqli_num_rows($result) > 0) {
   closeConnectionDataBase();
   session_start();
 
-  // seta como usuário logado
+
+  $row = mysqli_fetch_assoc($result);
+  $email = $row["email"];
+
   $_SESSION["loggedin"] = true;
+  setcookie("email", $email, time() + 3600, "/");
+
   header("Location: ../index.php");
   exit();
 } else {

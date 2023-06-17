@@ -3,7 +3,9 @@ body {
 }
 
 #buttons{
-  width: 20%;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  width: 100%;
 }
 
 #title-cart {
@@ -70,7 +72,7 @@ button {
   color: #fff;
 }
 
-#cart tbody tr:hover {
+#cart tbody {
   background-color: #f9f9f9;
 }
 
