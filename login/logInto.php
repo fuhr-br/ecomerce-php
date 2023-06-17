@@ -19,7 +19,7 @@ if (mysqli_num_rows($result) > 0) {
   $email = $row["email"];
 
   $_SESSION["loggedin"] = true;
-  setcookie("email", $email, time() + 3600, "/");
+  $_SESSION["email"] = $email;
 
   header("Location: ../index.php");
   exit();
@@ -29,9 +29,9 @@ if (mysqli_num_rows($result) > 0) {
 ?>
 
 <head>
-<link rel="stylesheet" href="styles.css">
-<?php include_once '../util/fonts.php'; ?>
-<title>Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <?php include_once '../util/fonts.php'; ?>
+  <title>Login</title>
 </head>
 <header>
   <?php include_once '../header/generic_header.php'; ?>

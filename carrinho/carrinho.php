@@ -1,6 +1,13 @@
+<?php
+session_start();
+
+if (!$_SESSION["loggedin"]) {
+  header("Location: ../util/alert_login.php");
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <?php include_once '../util/fonts.php'; ?>
