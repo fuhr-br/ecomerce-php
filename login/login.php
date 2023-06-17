@@ -8,8 +8,12 @@ if (@$_SESSION["loggedin"]) {
 ?>
 <head>
 <link rel="stylesheet" href="styles.css">
+<?php include_once '../util/fonts.php'; ?>
 <title>Login</title>
 </head>
+<header>
+  <?php include_once '../header/generic_header.php'; ?>
+</header>
 <div class="container">
 
   <form action="logInto.php" method="post">
@@ -25,3 +29,6 @@ if (@$_SESSION["loggedin"]) {
   </form>
   
 </div>
+<footer>
+  <?php include_once '../footer/footer.php'; ?>
+</footer>

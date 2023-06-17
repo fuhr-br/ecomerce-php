@@ -19,14 +19,18 @@ if (mysqli_num_rows($result) > 0) {
   header("Location: ../index.php");
   exit();
 } else {
-  header('Location: ../util/erro.php');
+  header('Location: ../util/user_not_found.php');
 }
 ?>
 
 <head>
 <link rel="stylesheet" href="styles.css">
+<?php include_once '../util/fonts.php'; ?>
 <title>Login</title>
 </head>
+<header>
+  <?php include_once '../header/generic_header.php'; ?>
+</header>
 
 <div class="container">
   <form action="logInto.php" method="post">
@@ -45,6 +49,9 @@ if (mysqli_num_rows($result) > 0) {
     </div>
   <?php endif; ?>
 </div>
+<footer>
+  <?php include_once '../footer/footer.php'; ?>
+</footer>
 
 <style>
   .login-output {
