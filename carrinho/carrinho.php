@@ -8,6 +8,7 @@ if (!$_SESSION["loggedin"]) {
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <?php include_once '../util/fonts.php'; ?>
@@ -125,9 +126,12 @@ if (!$_SESSION["loggedin"]) {
 
     function finalizarCompra() {
       let total = localStorage.getItem("totalCart");
+      const items = carregarItensDoLocalStorage();
+
       if (total > 0) {
         localStorage.clear();
-        window.location.href = "../util/sucesso.php";
+        const itemsJson = JSON.stringify(items);
+        window.location.href = "../email/email.php?total=" + encodeURIComponent(total) + "&items=" + encodeURIComponent(itemsJson);
       }
     }
 
