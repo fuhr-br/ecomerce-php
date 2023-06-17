@@ -2,6 +2,10 @@ body {
   font-family: Arial;
 }
 
+#buttons{
+  width: 20%;
+}
+
 #title-cart {
   font-style: italic;
   color: #1985a1;

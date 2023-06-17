@@ -49,19 +49,3 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #3e8e41;
 }
-
-#botao {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  width: 100%;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 10px;
-  margin-top: 10px;
-}
-
-#botao:hover {
-  background-color: #45a049;
-}

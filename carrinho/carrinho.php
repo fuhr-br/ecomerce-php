@@ -12,6 +12,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="./styles.css">
+<link rel="stylesheet" href="../CSS/button.css">
 <body onload="popularCarrinho(carregarItensDoLocalStorage())">
 <div id="container">
   <h1 id="title-cart">Carrinho de compras</h1>
@@ -28,7 +29,12 @@
       </tbody>
     </table>
 </h3>
+<div id="buttons" >
+  <button id="botao" onclick="window.location.href='../index.php'">Voltar para página Inicial</button>
+</div>
+
 </div> 
+
 <footer>
   <?php include_once '../footer/footer.php'; ?>
 </footer>

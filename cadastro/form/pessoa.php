@@ -1,6 +1,7 @@
 <head>
   <?php include_once '../../util/fonts.php'; ?>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/CSS/button.css">
   <title>Formulário de cadastro</title>
 </head>
 <header>
