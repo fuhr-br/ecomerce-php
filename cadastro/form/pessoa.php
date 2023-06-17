@@ -1,7 +1,9 @@
 <head>
   <?php include_once '../../util/fonts.php'; ?>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="/CSS/button.css">
+  <link rel="stylesheet" href="../../CSS/button.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
   <title>Formulário de cadastro</title>
 </head>
 <header>
@@ -13,10 +15,11 @@
   <form name="formulario" action="../cadastro_pessoa.php" method="POST">
     <h1>Cadastro de Pessoa</h1>
     <label for="nome">Nome:</label>
-    <input type="text" name="nome" pattern="^[a-zA-Z]+$" required><br>
+    <input type="text" name="nome" required><br>
 
     <label for="cpf">CPF:</label>
-    <input type="text" placeholder="xxx.xxx.xx-xx" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><br>
+    <input type="text" placeholder="xxx.xxx.xx-xx" name="cpf" id="cpfInput" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+      title="Digite um CPF válido (xxx.xxx.xx-xx)" required><br>
 
     <label for="email">Email:</label>
     <input type="email" name="email" required><br>
@@ -54,5 +57,14 @@
     <button class="botao" onclick="window.location.href='../../index.php'">Voltar para página Inicial</button>
   </form>
 </body>
+<footer>
+  <?php include_once '../../footer/footer.php'; ?>
+</footer>
 
 </html>
+<script>
+  $(document).ready(function () {
+    $('#cpfInput').mask('000.000.000-00');
+  });
+
+</script>

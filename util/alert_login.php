@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="/CSS/button.css">
+<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../CSS/button.css">
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 	<title>Alerta</title>
 </head>
 <body>
