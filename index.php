@@ -119,6 +119,7 @@ initConectDataBase();
   }
 
   searchProducts();
+  
   function searchProductsByCategory(element) {
     var param = element.innerText;
       $.ajax({
