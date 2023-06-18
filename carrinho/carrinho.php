@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!$_SESSION["loggedin"]) {
+if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
   header("Location: ../util/alert_login.php");
   exit();
 }
