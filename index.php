@@ -3,7 +3,6 @@
 
 <?php
 require_once 'database/query/select/produto.php';
-
 require_once 'database/conection.php';
 initConectDataBase();
 ?>
@@ -119,21 +118,20 @@ initConectDataBase();
   }
 
   searchProducts();
-  
+
   function searchProductsByCategory(element) {
     var param = element.innerText;
-      $.ajax({
-        url: 'database/query/select/search_products_by_category.php',
-        data: { param: param },
-        dataType: 'json',
-        success: function (products) {
-          console.log(products)
-          popularProductList(products);
-        },
-        error: function (xhr, status, error) {
-          console.log('Ocorreu um erro na solicitação AJAX:', xhr.responseText);
-        }
-      });
-    }
+    $.ajax({
+      url: 'database/query/select/search_products_by_category.php',
+      data: { param: param },
+      dataType: 'json',
+      success: function (products) {
+        console.log(products)
+        popularProductList(products);
+      },
+      error: function (xhr, status, error) {
+        console.log('Ocorreu um erro na solicitação AJAX:', xhr.responseText);
+      }
+    });
+  }
 </script>
-

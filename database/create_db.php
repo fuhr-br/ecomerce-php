@@ -2,9 +2,7 @@
 
 require_once 'query/create_user.php';
 require_once 'query/create_endereco.php';
-require_once 'query/create_carrinho.php';
 require_once 'query/create_produto.php';
-require_once 'query/create_carrinho_produto.php';
 require_once 'query/insert/usuario.php';
 require_once 'query/insert/produto.php';
 require_once 'mock/produto_mock.php';
@@ -33,10 +31,6 @@ function createTables($conn)
   excecute($conn, $endereco);
   $produto = createProduct();
   excecute($conn, $produto);
-  $carrinho = createTableCart();
-  excecute($conn, $carrinho);
-  $carrinhoProduto = createTableCartProduct();
-  excecute($conn, $carrinhoProduto);
 
   $query = "DELETE FROM produto;";
   excecute($conn, $query);
