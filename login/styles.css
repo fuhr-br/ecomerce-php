@@ -3,6 +3,10 @@
   flex-direction: column;
   gap: 10px;
 }
+body{
+  margin: 0px;
+}
+
 .botao {
   background-color: #4CAF50;
   color: white;

@@ -71,13 +71,14 @@
   }
 
   .navigation-menu li a {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    color: #666;
-    transition: color 0.3s, background-color 0.3s, transform 0.3s;
-  }
+  height: 10%;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 20px;
+  color: #666;
+  transition: color 0.3s, background-color 0.3s, transform 0.3s;
+}
 
   .navigation-menu li a:hover {
     color: #333;
@@ -88,8 +89,11 @@
     transform: translateY(3px);
   }
 
-
   h3 {
     font-style: italic;
+  }
+  
+  h1{
+    padding-left: 15px;
   }
 </style>
