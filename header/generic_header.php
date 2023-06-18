@@ -4,7 +4,6 @@
   <header class="header">
 
     <div class="container header-container">
-
       <a href="/ecomerce-php/index.php" class="logo">
         <h1>Magazine</h1>
       </a>

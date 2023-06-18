@@ -14,7 +14,7 @@
 <body>
   <div class="container">
     <h3>Envie Sua mensagem que entraremos em contato!</h3>
-    <form action="#" method="POST">
+    <form action="../email/email_contato.php" method="POST">
       <div class="form-group">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>

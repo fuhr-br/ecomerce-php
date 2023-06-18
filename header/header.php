@@ -21,6 +21,7 @@
 
         <?php
         $items = array(
+          array("class" => "email", "icon" => "email", "link" => "./contato/fale_conosco.php", "tooltip" => "Entrar"),
           array("class" => "shopping-cart", "icon" => "shopping_cart", "link" => "./carrinho/carrinho.php", "tooltip" => "Carrinho de Compras"),
           array("class" => "account", "icon" => "account_circle", "link" => "./login/login.php", "tooltip" => "Entrar")
         );
