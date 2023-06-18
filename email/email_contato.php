@@ -2,9 +2,9 @@
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $nome = $_POST["nome"];
   $from = $_POST["email"];
-  $mensagem .= "Cliente:  $nome \n";
+  $mensagem = "Cliente:  $nome \n";
   $mensagem .= "Email:    $from \n";
-  $mensagem = "Mensagem: " . $_POST["mensagem"];
+  $mensagem .= "Mensagem: " . $_POST["mensagem"];
 
   $destino = "andersonfuhr.afs@gmail.com";
   $assunto = "Contato de cliente";
