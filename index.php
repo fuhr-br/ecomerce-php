@@ -63,39 +63,46 @@ initConectDataBase();
 
   function popularProductList(products) {
 
-    var el = $('.teste_id');
-    el.empty();
+    if (products.length === 0) {
+      var ulElement = $('#list');
+      ulElement.empty();
 
-    var ulElement = $('#list');
-    ulElement.empty();
+      var h1Element = $('<h1>').text("Nenhum item foi encontrado!");
+      ulElement.append(h1Element);
 
-    $.each(products, function (index, item) {
-      var liElement = $('<li>');
+    } else {
+      var ulElement = $('#list');
+      ulElement.empty();
 
-      var imgElement = $('<img>').attr('src', item.imagem).attr('alt', 'minigame');
-      liElement.append(imgElement);
+      $.each(products, function (index, item) {
+        var liElement = $('<li>');
 
-      var h1Element = $('<h1>').text(item.descricao);
-      liElement.append(h1Element);
+        var imgElement = $('<img>').attr('src', item.imagem).attr('alt', 'minigame');
+        liElement.append(imgElement);
 
-      var h2Element = $('<h2>').text(item.valor);
-      liElement.append(h2Element);
+        var h1Element = $('<h1>').text(item.descricao);
+        liElement.append(h1Element);
 
-      var divElement = $('<div>');
-      liElement.append(divElement);
+        var h2Element = $('<h2>').text(item.valor);
+        liElement.append(h2Element);
 
-      var buttonElement = $('<button>').attr('alt', 'Botão de Comprar').text('Comprar');
-      divElement.append(buttonElement);
+        var divElement = $('<div>');
+        liElement.append(divElement);
 
-      buttonElement.click(function () {
-        var descricao = h1Element.text();
-        var preco = h2Element.text();
-        addCart(preco, descricao);
+        var buttonElement = $('<button>').attr('alt', 'Botão de Comprar').text('Comprar');
+        divElement.append(buttonElement);
+
+        buttonElement.click(function () {
+          var descricao = h1Element.text();
+          var preco = h2Element.text();
+          addCart(preco, descricao);
+        });
+
+        ulElement.append(liElement);
+
       });
+    }
 
-      ulElement.append(liElement);
-
-    });
   }
   function addCart(preco, descricao) {
     const item = new Item(preco, descricao);

@@ -10,7 +10,6 @@
 </head>
 <body>
 	<div class="container">
-  <i id="i-error" class="fas fa-exclamation-triangle" alt="Icone do mascote do site do GitHub.com"></i>
 		<h1>Você deve fazer login para acessar esta página!</h1>
 		<button onclick="window.location.href='../index.php'">Voltar para página Inicial</button>
     <button style="width:45%;" onclick="window.location.href='../login/login.php'">Fazer Login</button>

@@ -10,7 +10,6 @@
 </head>
 <body>
 	<div class="container">
-  <i id="i-error" class="fas fa-exclamation-triangle" alt="Icone do mascote do site do GitHub.com"></i>
 		<h1>Usuário não encontrado!</h1>
 		<button onclick="window.location.href='../index.php'">Voltar para página Inicial</button>
     <button onclick="window.location.href='../login/login.php'">Voltar para tela de login</button>

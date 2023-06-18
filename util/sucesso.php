@@ -9,7 +9,6 @@
 </head>
 <body>
 	<div class="container">
-  <i id="i-sucess" class="far fa-check-circle" alt="Icone do mascote do site do GitHub.com"></i>
 		<h1>Compra Realizada com sucesso!</h1>
     <h3>Você receberá um email da confirmação da compra!</h3>
 		<button onclick="window.location.href='../index.php'">Voltar para página Inicial</button>
